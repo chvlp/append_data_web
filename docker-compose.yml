@@ -1,0 +1,8 @@
+services:
+  append_data_web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "9900:9900"
+    container_name: append_data_web
