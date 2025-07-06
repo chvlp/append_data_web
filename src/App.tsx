@@ -199,25 +199,25 @@ export default function App() {
 
     return (
         <div className={"p-4"}>
-           <div className={"flex flex-row justify-between"}>
-               <div className={"flex flex-row gap-2"}>
-                   <Label >Search</Label>
-                   <Input
-                       name="search"
-                       value={search}
-                       placeholder="searching here..."
-                       onChange={(e) => {
-                           const value = e.target.value;
-                           setSearch(value);
-                       }}
-                   />
-                   <Button onClick={()=>fetchData(search)}>Search</Button>
-               </div>
-               <div className={"flex flex-row gap-2"}>
-                   <Button className={"rounded-md cursor-pointer"} onClick={() => setOpenField(true)}>Add Column</Button>
-                   <Button className={"rounded-md cursor-pointer"} onClick={()=>setOpenData(true)}>Add Data</Button>
-               </div>
-           </div>
+            <div className={"flex flex-col md:flex-row justify-between gap-4"}>
+                <div className={"flex flex-row gap-2"}>
+                    <Label >Search</Label>
+                    <Input
+                        name="search"
+                        value={search}
+                        placeholder="searching here..."
+                        onChange={(e) => {
+                            const value = e.target.value;
+                            setSearch(value);
+                        }}
+                    />
+                    <Button onClick={()=>fetchData(search)}>Search</Button>
+                </div>
+                <div className={"flex flex-row gap-2"}>
+                    <Button className={"rounded-md cursor-pointer"} onClick={() => setOpenField(true)}>Add Column</Button>
+                    <Button className={"rounded-md cursor-pointer"} onClick={()=>setOpenData(true)}>Add Data</Button>
+                </div>
+            </div>
 
             {loadingField || loadingData ? (
                 <div className="py-10 text-center text-gray-500">
